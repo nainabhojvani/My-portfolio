@@ -98,7 +98,7 @@ const SkillSection = () => {
   return (
   <section id="skills" className="py-20 px-6 bg-transparent  text-white">
       <h2 className="text-4xl font-bold text-center mb-16">My Skills</h2>
-      <div className="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="max-w-3xl mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {skills.map((skill, index) => (
           <motion.div
             key={index}

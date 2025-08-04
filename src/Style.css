@@ -1,17 +1,26 @@
-/* Header.css */
-.header {
-  @apply fixed top-0 w-full  bg-slate-900 text-white flex   items-center p-4 px-12 z-[100];
-}
-.nav-links{
-  @apply flex justify-between  w-full;
-}
-.nav-links button {
-  @apply relative  bg-transparent border-none text-white ml-8 text-xl cursor-pointer transition-colors duration-300 p-2 rounded-xl;
-}
-.header-logo{
-  @apply h-[50px] w-auto mr-1 object-contain;
+/* =========================================== header Section ==================================== */
 
+
+.header {
+  @apply fixed top-0 w-full bg-slate-900 text-white flex items-center p-4 px-6 sm:px-10 lg:px-12 z-[100];
 }
+
+.nav-links {
+  @apply flex flex-row  justify-between w-full sm:items-center gap-4 sm:gap-0;
+}
+
+.nav-links a {
+  @apply flex items-center text-xl mb-2 sm:mb-0;
+}
+
+.header-logo {
+  @apply h-[40px] sm:h-[50px] w-auto mr-1 object-contain;
+}
+
+.nav-links button {
+  @apply relative bg-transparent border-none text-white ml-0 sm:ml-8 text-lg sm:text-xl cursor-pointer transition-colors duration-300 p-2 rounded-xl;
+}
+
 .nav-links button::after {
   content: "";
   position: absolute;
@@ -33,7 +42,6 @@
   @apply text-sky-400;
 }
 
-/* NEW: Active button highlight */
 .nav-links button.active {
   @apply text-sky-400 font-semibold;
 }
@@ -43,7 +51,8 @@
 }
 
 
-/* Home css */
+/* =========================================== home Section ==================================== */
+
 .home-section {
   @apply min-h-[70vh] scroll-mt-24 text-white flex items-start justify-start mt-[7rem] mx-5 bg-transparent p-8;
 }
@@ -98,47 +107,8 @@
     transform: translateY(0);
   }
 }
+/* =========================================== laptop Section ==================================== */
 
-/* Skills CSS */
-.skills-section {
-  padding: 4rem 2rem;
-  background-color: #0f172a; /* slate-900 */
-  color: white;
-  text-align: center;
-}
-
-.skills-heading {
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  gap: 2rem;
-  justify-items: center;
-}
-
-.skill-icon {
-  font-size: 3rem;
-  transition: transform 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.skill-icon:hover {
-  transform: scale(1.2) rotate(5deg);
-}
-
-.skill-icon span {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  color: #cbd5e1; /* slate-300 */
-}
-
-/* laptop css */
 .laptop-wrapper {
   display: flex;
   justify-content: center;
@@ -253,9 +223,7 @@
     opacity: 0;
   }
 }
-
-/* Education */
-/* Education.css */
+/* =========================================== Education Section ==================================== */
 
 .education-section {
   @apply text-white bg-transparent px-6 py-12;
@@ -266,15 +234,15 @@
 }
 
 .education-container {
-  @apply flex items-center justify-center md:flex-row gap-8 max-w-3xl mx-auto;
+  @apply flex flex-col md:flex-row items-center justify-center gap-8 max-w-4xl mx-auto;
 }
 
 .education-buttons {
-  @apply flex md:flex-col   gap-4 justify-center md:items-start;
+  @apply flex flex-row md:flex-col gap-4 justify-center items-center md:items-start;
 }
 
 .education-tab {
-  @apply px-6 py-2 rounded-lg w-40  text-left bg-gray-700  transition duration-200;
+  @apply px-6 py-2 rounded-lg w-36 sm:w-40 text-left bg-gray-700  transition duration-200;
 }
 
 .active-tab {
@@ -282,11 +250,11 @@
 }
 
 .education-info {
-  @apply  bg-[#12182b] border border-cyan-700 p-6 rounded-lg flex-1 shadow-lg;
+  @apply bg-[#12182b] border border-cyan-700 p-6 rounded-lg flex-1 shadow-lg w-full;
 }
 
 .education-title {
-  @apply text-xl font-semibold;
+  @apply text-lg sm:text-xl font-semibold;
 }
 
 .education-duration {
@@ -302,7 +270,8 @@
 }
 
 
-/*experience Section Styling */
+/* =========================================== experience Section ==================================== */
+
 .exp-section {
   @apply bg-transparent scroll-mt-16  text-white px-6 py-16 ;
 }
@@ -347,7 +316,8 @@
   @apply text-sm text-gray-400 mt-3 leading-relaxed;
 }
 
-/* Project section*/
+/* =========================================== project Section ==================================== */
+
 .glass-project-heading {
   @apply text-3xl font-bold  text-white mb-10 text-center uppercase;
 }
@@ -404,7 +374,8 @@
 }
 
 
-/* ==== Contact Section (Underline Style) ==== */
+/* =========================================== contact Section ==================================== */
+
 
 .contact-section {
   @apply px-6 py-16 text-white scroll-mt-20 m-20;
@@ -443,11 +414,10 @@ select:-webkit-autofill {
   font-weight: bold;
   font-size: 1.1rem;
 }
+/* =========================================== footer Section ==================================== */
 
-/* footer */
-/* Footer Wrapper */
 .footer {
-  @apply bg-cyan-700 mb-0 text-slate-100 py-12 px-6  h-80;
+  @apply bg-cyan-700 mb-0 text-slate-100 py-12 px-6  h-96;
 }
 
 /* Main layout */
