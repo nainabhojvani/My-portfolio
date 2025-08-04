@@ -1,0 +1,488 @@
+/* Header.css */
+.header {
+  @apply fixed top-0 w-full  bg-slate-900 text-white flex   items-center p-4 px-12 z-[100];
+}
+.nav-links{
+  @apply flex justify-between  w-full;
+}
+.nav-links button {
+  @apply relative  bg-transparent border-none text-white ml-8 text-xl cursor-pointer transition-colors duration-300 p-2 rounded-xl;
+}
+.header-logo{
+  @apply h-[50px] w-auto mr-1 object-contain;
+
+}
+.nav-links button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 100%;
+  height: 2px;
+  background-color: #38bdf8;
+  transform-origin: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-links button:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.nav-links button:hover {
+  @apply text-sky-400;
+}
+
+/* NEW: Active button highlight */
+.nav-links button.active {
+  @apply text-sky-400 font-semibold;
+}
+
+.nav-links button.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+
+/* Home css */
+.home-section {
+  @apply min-h-[70vh] scroll-mt-24 text-white flex items-start justify-start mt-[7rem] mx-5 bg-transparent p-8;
+}
+
+.content {
+  @apply  max-w-3xl;
+}
+
+.title {
+  @apply text-4xl md:text-5xl font-bold mb-4;
+  animation: fadeInDown 1s ease-out forwards;
+}
+
+.subtitle {
+  @apply text-lg text-justify md:text-xl mb-6;
+  animation: fadeIn 2s ease-out forwards;
+}
+
+.btn {
+  @apply inline-block bg-sky-500 hover:bg-sky-600 text-white font-semibold py-2 px-6 rounded-xl m-2 transition-all duration-300;
+  animation: fadeInUp 2.5s ease-out forwards;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Skills CSS */
+.skills-section {
+  padding: 4rem 2rem;
+  background-color: #0f172a; /* slate-900 */
+  color: white;
+  text-align: center;
+}
+
+.skills-heading {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.skill-icon {
+  font-size: 3rem;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skill-icon:hover {
+  transform: scale(1.2) rotate(5deg);
+}
+
+.skill-icon span {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #cbd5e1; /* slate-300 */
+}
+
+/* laptop css */
+.laptop-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px;
+  margin-top: 60px;
+  margin-left: 90px;
+}
+
+.laptop {
+  width: 500px;
+  height: 450px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: spin 10s linear  infinite;
+}
+
+.screen {
+  width: 100%;
+  height: 60%;
+  background: black;
+  border: 4px solid #aaa;
+  border-radius: 8px 8px 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bgChangeScreen 10s linear  infinite;
+}
+
+.keyboard {
+  width: 100%;
+  height: 40%;
+  background: #e0e0e0;
+  border-radius: 0 0 10px 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: rotateX(80deg);
+  transform-origin: top;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  animation: bgChange 10s linear  infinite;
+}
+
+.keys {
+  width: 80%;
+  height: 50%;
+  background: #111;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 8px;
+  animation: hiddens 10s linear  infinite;
+}
+
+.terminal {
+  color: #00ff99;
+  font-family: 'Courier New', monospace;
+  font-size: 2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #00ff99;
+  width: 0;
+  transition: opacity 0.5s linear ;
+  animation:
+    typing 3s steps(22, end) 1s infinite alternate,
+    blink 0.7s step-end infinite,
+    terminalHide 10s linear infinite;
+} 
+
+@keyframes spin {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+@keyframes bgChange {
+  0% { background-color: #f0f0f0; }
+  25% { background-color: #aaa; }
+  50% { background-color: #888; }
+  75% { background-color: #aaa; }
+  100% { background-color: #f0f0f0; }
+}
+
+@keyframes hiddens {
+  0%, 100% { background-color: #111; }
+  25% { background-color: #aaa; }
+  50% { background-color: #888; }
+  75% { background-color: #aaa; }
+}
+
+@keyframes bgChangeScreen {
+  0%, 100% { background-color: black; }
+  50% { background-color: #888; }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 90% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+@keyframes terminalHide {
+  0%, 15%, , 100% {
+    opacity: 1;
+  }
+  25%, 60%, 70% {
+    opacity: 0;
+  }
+}
+
+/* Education */
+/* Education.css */
+
+.education-section {
+  @apply text-white bg-transparent px-6 py-12;
+}
+
+.education-heading {
+  @apply text-3xl font-bold mb-8 text-center;
+}
+
+.education-container {
+  @apply flex items-center justify-center md:flex-row gap-8 max-w-3xl mx-auto;
+}
+
+.education-buttons {
+  @apply flex md:flex-col   gap-4 justify-center md:items-start;
+}
+
+.education-tab {
+  @apply px-6 py-2 rounded-lg w-40  text-left bg-gray-700  transition duration-200;
+}
+
+.active-tab {
+  @apply bg-cyan-500 text-black;
+}
+
+.education-info {
+  @apply  bg-[#12182b] border border-cyan-700 p-6 rounded-lg flex-1 shadow-lg;
+}
+
+.education-title {
+  @apply text-xl font-semibold;
+}
+
+.education-duration {
+  @apply text-sm text-gray-400;
+}
+
+.education-degree {
+  @apply mt-2;
+}
+
+.education-result {
+  @apply font-bold mt-2;
+}
+
+
+/*experience Section Styling */
+.exp-section {
+  @apply bg-transparent scroll-mt-16  text-white px-6 py-16 ;
+}
+
+.exp-heading {
+  @apply text-2xl md:text-3xl font-bold text-white mb-10 uppercase tracking-wide text-center;
+}
+
+/* Timeline Wrapper */
+.exp-timeline-wrapper {
+  @apply relative flex items-start pl-8 max-w-3xl mx-auto;
+}
+
+.exp-marker::before {
+  content: '';
+  @apply absolute w-[2px] h-full bg-cyan-400 left-[6px] top-0;
+}
+
+.exp-marker::after {
+  content: '';
+  @apply absolute w-4 h-4 bg-cyan-400 rounded-full left-0 ;
+}
+
+/* Card */
+.exp-card {
+  @apply bg-[#12182b] border border-cyan-700 p-6 ml-6 rounded-md shadow-lg w-full;
+}
+
+.exp-date {
+  @apply text-cyan-400 font-semibold;
+}
+
+.exp-role {
+  @apply text-lg md:text-xl font-bold mt-1;
+}
+
+.exp-company {
+  @apply text-sm text-gray-300 mt-1;
+}
+
+.exp-description {
+  @apply text-sm text-gray-400 mt-3 leading-relaxed;
+}
+
+/* Project section*/
+.glass-project-heading {
+  @apply text-3xl font-bold  text-white mb-10 text-center uppercase;
+}
+
+/* Project List */
+.glass-project-list {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto;
+}
+
+/* Card Layout */
+.glass-project-card {
+  @apply flex flex-col gap-4 p-6 rounded-xl transition transform hover:scale-[1.015];
+  background: rgba(18, 24, 43, 0.6);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* Image */
+.glass-project-image {
+  @apply overflow-hidden rounded-md;
+}
+.glass-project-image img {
+  @apply w-full h-48 object-cover rounded-md border border-cyan-700;
+}
+
+/* Content */
+.glass-project-content {
+  @apply flex flex-col justify-between;
+}
+
+.glass-project-title {
+  @apply text-xl font-bold text-cyan-400;
+}
+
+.glass-project-desc {
+  @apply text-sm text-gray-300 mt-2;
+}
+
+.glass-project-tech {
+  @apply text-xs text-cyan-300 mt-2 italic;
+}
+
+.glass-project-buttons {
+  @apply flex gap-4 mt-4;
+}
+
+.glass-project-btn {
+  @apply bg-cyan-500 text-sm text-white px-4 py-2 rounded-md hover:bg-cyan-600 transition;
+}
+
+.glass-project-btn-secondary {
+  @apply bg-gray-700 text-sm text-white px-4 py-2 rounded-md hover:bg-gray-600 transition;
+}
+
+
+/* ==== Contact Section (Underline Style) ==== */
+
+.contact-section {
+  @apply px-6 py-16 text-white scroll-mt-20 m-20;
+  background: transparent;
+}
+
+.contact-heading {
+  @apply text-3xl font-bold mb-10 uppercase;
+}
+
+.contact-form-underline {
+  @apply max-w-xl flex flex-col gap-6;
+}
+
+.contact-field-underline input,
+.contact-field-underline textarea {
+  @apply w-full bg-transparent border-0 border-b border-cyan-500 text-white placeholder:text-gray-600 focus:outline-none focus:border-cyan-300;
+  padding: 10px 0;
+}
+
+.contact-btn-underline {
+  @apply w-fit mt-4 bg-cyan-500 text-white px-6 py-2 rounded hover:bg-cyan-600 transition;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  background-color: #0f172a !important; /* your dark background */
+  color: white !important;
+  -webkit-text-fill-color: #ffffff !important;
+  -webkit-box-shadow: 0 0 0px 1000px #0f172a inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.success-message {
+  margin-top: 1rem;
+  color: #10b981; /* Tailwind's emerald-500 */
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* footer */
+/* Footer Wrapper */
+.footer {
+  @apply bg-cyan-700 mb-0 text-slate-100 py-12 px-6  h-80;
+}
+
+/* Main layout */
+.footer-container {
+  @apply max-w-7xl mx-auto h-full flex flex-col justify-between md:flex-row md:items-center;
+}
+
+/* Left side */
+.footer-left {
+  @apply flex flex-col items-center gap-5 md:items-start;
+}
+
+.footer-logo {
+  @apply h-[200px] w-auto object-contain;
+}
+
+.footer-socials {
+  @apply flex gap-4 text-4xl;
+}
+
+/* Icons */
+.footer-icon {
+  @apply text-cyan-100 transition duration-300 hover:text-white hover:scale-110;
+}
+
+/* Center text */
+.footer-center {
+  @apply text-center text-[1rem] text-cyan-100 leading-relaxed;
+}
+
+/* Right side */
+.footer-right {
+  @apply text-center md:text-right;
+}
+
+.footer-email {
+  @apply text-cyan-200 text-xl underline transition duration-300 hover:text-white;
+}
