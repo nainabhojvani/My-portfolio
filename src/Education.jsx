@@ -24,14 +24,26 @@ const Education = () => {
       result: 'Result: 98 PR',
     }
   };
-  
 
   return (
     <section className="education-section">
       <h2 className="education-heading">🎓 Education</h2>
 
       <div className="education-container">
-        {/* Left: Vertical Buttons */}
+        {/* Mobile Dropdown */}
+        <div className="education-dropdown-wrapper">
+          <select
+            className="education-dropdown"
+            value={activeTab}
+            onChange={(e) => setActiveTab(e.target.value)}
+          >
+            <option value="btech">B.Tech</option>
+            <option value="grade12">HSC</option>
+            <option value="grade10">SSC</option>
+          </select>
+        </div>
+
+        {/* Vertical Buttons */}
         <div className="education-buttons">
           <button
             className={`education-tab ${activeTab === 'btech' ? 'active-tab' : ''}`}
@@ -53,7 +65,7 @@ const Education = () => {
           </button>
         </div>
 
-        {/* Right: Info Box */}
+        {/* Info Box */}
         <div className="education-info">
           <h3 className="education-title">{educationData[activeTab].title}</h3>
           <p className="education-duration">{educationData[activeTab].duration}</p>

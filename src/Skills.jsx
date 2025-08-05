@@ -14,8 +14,8 @@ import {
   SiMysql,
   SiPython,
   SiPostman,
-  SiFigma,
 } from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
 
 const skills = [
   {
@@ -75,9 +75,9 @@ const skills = [
     bg: "bg-[#fff2eb]",
   },
   {
-    name: "Figma",
-    icon: <SiFigma size={50} className="text-[#a259ff]" />,
-    bg: "bg-[#f3eaff]",
+    name: "VScode",
+    icon: <VscVscode  size={50} className="text-[#007ACC]" />,
+    bg: "bg-[#E6F3FC]",
   },
 ];
 
