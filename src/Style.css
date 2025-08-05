@@ -356,7 +356,7 @@
 
 
 .contact-section {
-  @apply px-6 py-16 text-white scroll-mt-20 m-20;
+  @apply px-3 md:px-6 py-16 text-white scroll-mt-20 m-10 md:m-20;
   background: transparent;
 }
 
@@ -388,7 +388,7 @@ select:-webkit-autofill {
 }
 .success-message {
   margin-top: 1rem;
-  color: #10b981; /* Tailwind's emerald-500 */
+  color: #10b981; 
   font-weight: bold;
   font-size: 1.1rem;
 }
