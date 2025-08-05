@@ -43,13 +43,13 @@ const Education = () => {
             className={`education-tab ${activeTab === 'grade12' ? 'active-tab' : ''}`}
             onClick={() => setActiveTab('grade12')}
           >
-            12th Grade
+            HSC
           </button>
           <button
             className={`education-tab ${activeTab === 'grade10' ? 'active-tab' : ''}`}
             onClick={() => setActiveTab('grade10')}
           >
-            10th Grade
+            SSC
           </button>
         </div>
 

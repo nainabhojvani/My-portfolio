@@ -6,7 +6,7 @@
 }
 
 .nav-links {
-  @apply flex flex-row  justify-between w-full sm:items-center gap-4 sm:gap-0;
+  @apply flex flex-col md:flex-row  justify-between w-full sm:items-center gap-4 sm:gap-0;
 }
 
 .nav-links a {
@@ -54,7 +54,7 @@
 /* =========================================== home Section ==================================== */
 
 .home-section {
-  @apply min-h-[70vh] scroll-mt-24 text-white flex items-start justify-start mt-[7rem] mx-5 bg-transparent p-8;
+  @apply min-h-[70vh] scroll-mt-24 text-white flex flex-col md:flex-row mt-[7rem] mx-5 bg-transparent p-8;
 }
 
 .content {
@@ -109,78 +109,47 @@
 }
 /* =========================================== laptop Section ==================================== */
 
-.laptop-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  perspective: 1200px;
-  margin-top: 60px;
-  margin-left: 90px;
-}
 
-.laptop {
-  width: 500px;
-  height: 450px;
-  position: relative;
-  transform-style: preserve-3d;
-  animation: spin 10s linear  infinite;
-}
+  .laptop-wrapper {
+    @apply flex justify-center items-center mt-[100px] lg:mt-[60px] lg:ml-[90px];
+    perspective: 1200px;
+  }
 
-.screen {
-  width: 100%;
-  height: 60%;
-  background: black;
-  border: 4px solid #aaa;
-  border-radius: 8px 8px 0 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: bgChangeScreen 10s linear  infinite;
-}
+  .laptop {
+    @apply w-[400px] h-[350px] md:w-[500px] md:h-[450px] relative;
+    transform-style: preserve-3d;
+    animation: spin 10s linear infinite;
+  }
 
-.keyboard {
-  width: 100%;
-  height: 40%;
-  background: #e0e0e0;
-  border-radius: 0 0 10px 10px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  transform: rotateX(80deg);
-  transform-origin: top;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  animation: bgChange 10s linear  infinite;
-}
+  .screen {
+    @apply w-full h-[60%] absolute top-0 left-0 flex items-center justify-center border-[4px] border-[#aaa] rounded-t-[8px] shadow-[0_4px_8px_rgba(0,0,0,0.5)];
+    animation: bgChangeScreen 10s linear infinite;
+  }
 
-.keys {
-  width: 80%;
-  height: 50%;
-  background: #111;
-  margin: auto;
-  margin-top: 20px;
-  border-radius: 8px;
-  animation: hiddens 10s linear  infinite;
-}
+  .keyboard {
+    @apply w-full h-[40%] absolute bottom-0 left-0 rounded-b-[10px] shadow-[0_10px_30px_rgba(0,0,0,0.4)];
+    background: #e0e0e0;
+    transform: rotateX(80deg);
+    transform-origin: top;
+    animation: bgChange 10s linear infinite;
+  }
 
-.terminal {
-  color: #00ff99;
-  font-family: 'Courier New', monospace;
-  font-size: 2rem;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid #00ff99;
-  width: 0;
-  transition: opacity 0.5s linear ;
-  animation:
-    typing 3s steps(22, end) 1s infinite alternate,
-    blink 0.7s step-end infinite,
-    terminalHide 10s linear infinite;
-} 
+  .keys {
+    @apply w-[80%] h-[50%] bg-[#111] mx-auto mt-[20px] rounded-[8px];
+    animation: hiddens 10s linear infinite;
+  }
 
+  .terminal {
+    @apply text-[#00ff99] font-mono text-2xl whitespace-nowrap overflow-hidden border-r-[2px] border-[#00ff99] w-0;
+    transition: opacity 0.5s linear;
+    animation:
+      typing 3s steps(22, end) 1s infinite alternate,
+      blink 0.7s step-end infinite,
+      terminalHide 10s linear infinite;
+  }
+
+
+/* Animations */
 @keyframes spin {
   0% { transform: rotateY(0deg); }
   100% { transform: rotateY(360deg); }
@@ -216,7 +185,7 @@
 }
 
 @keyframes terminalHide {
-  0%, 15%, , 100% {
+  0%, 15%, 100% {
     opacity: 1;
   }
   25%, 60%, 70% {
@@ -242,7 +211,7 @@
 }
 
 .education-tab {
-  @apply px-6 py-2 rounded-lg w-36 sm:w-40 text-left bg-gray-700  transition duration-200;
+  @apply px-6 py-2 rounded-lg w-28 sm:w-40 text-center bg-gray-700  transition duration-200;
 }
 
 .active-tab {
@@ -431,11 +400,11 @@ select:-webkit-autofill {
 }
 
 .footer-logo {
-  @apply h-[200px] w-auto object-contain;
+  @apply h-[160px] w-auto object-contain;
 }
 
 .footer-socials {
-  @apply flex gap-4 text-4xl;
+  @apply flex gap-4 text-3xl;
 }
 
 /* Icons */

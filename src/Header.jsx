@@ -15,12 +15,12 @@ const Header = ({ activeSection }) => {
     <header className="header">
       <nav className="nav-links">
         {/* Logo & Name */}
-        {!isMenuOpen && (
+        <div className="flex flex-row justify-between items-center">
           <a href="#" className="flex items-center text-xl">
             <img src={logo} alt="NB Logo" className="header-logo" />
             Naina Bhojvani
           </a>
-        )}
+        
 
         {/* Hamburger Icon */}
         <div className="sm:hidden">
@@ -31,7 +31,7 @@ const Header = ({ activeSection }) => {
             {isMenuOpen ? "✖" : "☰"}
           </button>
         </div>
-
+    </div>
         {/* Navigation Links */}
         <div
           className={`${isMenuOpen ? "flex" : "hidden"
