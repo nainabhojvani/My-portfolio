@@ -59,7 +59,7 @@ const Education = () => {
             }`}
             onClick={() => setActiveTab("grade12")}
           >
-            HSC
+            12th
           </button>
           <button
             className={`education-tab ${
@@ -67,7 +67,7 @@ const Education = () => {
             }`}
             onClick={() => setActiveTab("grade10")}
           >
-            SSC
+            10th
           </button>
         </div>
 
