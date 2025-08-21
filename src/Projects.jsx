@@ -1,9 +1,10 @@
-import React from 'react';
-import './Style.css';
-import ticImg from './assets/tic.png';
-import calcImg from './assets/calc.png';
-import rnImg from './assets/RN.png';
-import w3Img from './assets/w3.png';
+import React from "react";
+import "./Style.css";
+import ticImg from "./assets/tic.png";
+import calcImg from "./assets/calc.png";
+import rnImg from "./assets/RN.png";
+import w3Img from "./assets/w3.png";
+import blogImg from "./assets/blogImg.png";
 
 const projects = [
   {
@@ -14,13 +15,20 @@ const projects = [
     image: rnImg,
   },
   {
+    title: "Blog Application",
+    tech: ["React", "Tailwind", "Node.js", "MongoDB"],
+    live: "https://blog-umq6.onrender.com/",
+    code: "https://github.com/nainabhojvani/blog",
+    image: blogImg,
+  },
+  {
     title: "Basic Calculator",
     tech: ["HTML", "CSS", "JavaScript"],
     live: "https://nainabhojvani.github.io/calculator/",
     code: "https://github.com/nainabhojvani/calculator",
     image: calcImg,
   },
- 
+
   {
     title: "Tic Tac Toe Game",
     tech: ["HTML", "CSS", "JavaScript"],
@@ -39,11 +47,10 @@ const projects = [
 
 const Projects = () => {
   return (
-   <section id="projects" className="glass-project-section scroll-mt-24 p-5">
+    <section id="projects" className="glass-project-section scroll-mt-24 p-5">
       <h2 className="glass-project-heading">PROJECTS</h2>
 
       <div className="glass-project-list">
-      
         {projects.map((project, index) => (
           <div className="glass-project-card" key={index}>
             <div className="glass-project-image">
@@ -52,13 +59,23 @@ const Projects = () => {
             <div className="glass-project-content">
               <h3 className="glass-project-title">{project.title}</h3>
               <p className="glass-project-tech">
-                Tech: {project.tech.join(', ')}
+                Tech: {project.tech.join(", ")}
               </p>
               <div className="glass-project-buttons">
-                <a href={project.live} target="_blank" rel="noopener noreferrer" className="glass-project-btn">
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glass-project-btn"
+                >
                   View Project
                 </a>
-                <a href={project.code} target="_blank" rel="noopener noreferrer" className="glass-project-btn-secondary">
+                <a
+                  href={project.code}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glass-project-btn-secondary"
+                >
                   GitHub
                 </a>
               </div>
